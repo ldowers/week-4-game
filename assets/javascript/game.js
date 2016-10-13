@@ -109,6 +109,7 @@ $("#attackButton").on('click', function(){
 			attackerDamage += attackerDamageIncrease;
 		}
 		else if (attackerHealth <= 0) {
+			isAttacker = false;
 			$("#fightResult").html("<p>You've been defeated...GAME OVER!!!</p>");
 			$("#restartButton").show();
 		}
