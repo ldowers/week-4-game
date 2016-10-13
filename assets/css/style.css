@@ -1,0 +1,43 @@
+body {
+	background-image: url("../images/starwars.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+h1 {
+	color: white;
+}
+
+p {
+	font-size: 20px;
+	color: white;
+	clear: both;
+}
+
+.characterBox {
+	position: relative;
+	width: 140px;
+	float: left;
+}
+
+.characterBox .characterImage {
+	border: 5px solid green;
+	padding: 20px 15px;
+	background-color: white;
+}
+
+.characterBox .characterName, .characterBox .characterHealth {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-size: 12px;
+	color: black;
+}
+
+.characterBox .characterName {
+	top: 10px;
+}
+
+.characterBox .characterHealth {
+	bottom: 8px;
+}
