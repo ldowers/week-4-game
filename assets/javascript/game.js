@@ -56,6 +56,7 @@ function chooseCharacter () {
 
 			$("#allCharacters > .characterBox").hide();
 			$("#allCharacters > .characterBox").attr('data-state', "allEnemies");
+			$("#allCharacters > .characterBox .characterImage").css({"background-color": "red", "border-color": "black"});
 			$("#allEnemies").append($("#allCharacters > .characterBox").show());
 		}
 		else if ($(this).data('state') == "allEnemies" && isDefender == false) {
@@ -63,6 +64,9 @@ function chooseCharacter () {
 			$(this).attr('data-state', "defender");
 			$("#defender").empty();
 			$("#defender").append($(this).show());
+			$("#defender .characterBox .characterImage").css({"background-color": "black", "border-color": "green"});
+			$("#defender .characterBox .characterName").css("color", "white");
+			$("#defender .characterBox .characterHealth").css("color", "white");
 			$("#defender").show();
 			isDefender = true;
 			defenderHealth = parseInt($(this).data('health'));
@@ -104,7 +108,7 @@ $("#attackButton").on('click', function(){
 
 		if (attackerHealth > 0 && defenderHealth > 0){
 			$("#fightResult").html("<p>You attacked " + $("#defender .characterBox .characterName").text() +
-				" for " + attackerDamage + " damage.</p>” + “<p>" + $("#defender .characterBox .characterName").text() +
+				" for " + attackerDamage + " damage." + "<br>" + $("#defender .characterBox .characterName").text() +
 				" attacked you back for " + defenderDamage + " damage.</p>");	
 			attackerDamage += attackerDamageIncrease;
 		}
@@ -118,6 +122,7 @@ $("#attackButton").on('click', function(){
 			isDefender = false;
 
 			if ($("#allEnemies").html() == "") {
+				isAttacker = false;
 				$("#fightResult").html("<p>You Won!!!! GAME OVER!!!</p>");
 				$("#restartButton").show();
 			}

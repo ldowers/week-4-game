@@ -14,21 +14,32 @@
 </head>
 <body>
 	<div class="container">
-		<header>
-			<h1 class="text-right">Star Wars RPG!</h1>
-		</header>
-		
-		<div id="allCharacters"></div>
-		<p>Your Character</p>
-		<div id="attacker"></div>
-		<p>Enemies Available To Attack</p>
-		<div id="allEnemies"></div>
-		<p>Fight Section</p>
-		<button id="attackButton">Attack</button>
-		<p>Defender</p>
-		<div id="defender"></div>
-		<div id="fightResult"></div>
-		<button id="restartButton">Restart</button>
+		<div class="row">
+			<div class="col-sm-12">
+				<header>
+					<h1 class="text-right starwars-logo-font">Star Wars RPG</h1>
+				</header>
+				<div id="allCharacters"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<p>Your Character</p>
+				<div id="attacker"></div>
+				<p>Enemies Available To Attack</p>
+				<div id="allEnemies"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<p>Fight Section</p>
+				<button id="attackButton">Attack</button>
+				<p>Defender</p>
+				<div id="defender"></div>
+				<div id="fightResult"></div>
+				<button id="restartButton">Restart</button>
+			</div>
+		</div>
 	</div>
 
 	<script src='assets/javascript/game.js'></script>

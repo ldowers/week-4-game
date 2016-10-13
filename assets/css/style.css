@@ -2,16 +2,26 @@ body {
 	background-image: url("../images/starwars.jpg");
 	background-size: 100% auto;
 	background-repeat: no-repeat;
-}
-
-h1 {
-	color: white;
+	background-color: black;
 }
 
 p {
-	font-size: 20px;
-	color: white;
 	clear: both;
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+}
+
+@font-face {
+	font-family: StarWarsLogoFont;
+	src: url(../fonts/SF%20Distant%20Galaxy%20Outline%20Italic.ttf) format('truetype');
+}
+
+.starwars-logo-font {
+	font-family: StarWarsLogoFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 48px;
+	color: yellow;
 }
 
 .characterBox {
@@ -21,7 +31,7 @@ p {
 }
 
 .characterBox .characterImage {
-	border: 5px solid green;
+	border: 3px solid green;
 	padding: 20px 15px;
 	background-color: white;
 }
@@ -35,9 +45,13 @@ p {
 }
 
 .characterBox .characterName {
-	top: 10px;
+	top: 6px;
 }
 
 .characterBox .characterHealth {
-	bottom: 8px;
+	bottom: 4px;
+}
+
+#fightResult {
+	font-size: 14px;
 }
