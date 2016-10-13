@@ -45,7 +45,7 @@ function setupCharacters () {
 function chooseCharacter () {
 	$("#allCharacters > .characterBox").on('click', function(){
 
-		if ($(this).data('state') == "allCharacters") {
+		if ($(this).data('state') == "allCharacters" && isAttacker == false) {
 			$(this).hide();
 			$(this).attr('data-state', "attacker");
 			$("#attacker").append($(this).show());
@@ -101,11 +101,13 @@ chooseCharacter();
 $("#attackButton").on('click', function(){
 	if (isAttacker && isDefender){
 		attackerHealth -= defenderDamage;
-		defenderHealth -= attackerDamage;
-
 		$("#attacker .characterBox .characterHealth").html(attackerHealth);
-		$("#defender .characterBox .characterHealth").html(defenderHealth);
 
+		if (attackerHealth > 0) {
+			defenderHealth -= attackerDamage;
+			$("#defender .characterBox .characterHealth").html(defenderHealth);
+		}
+		
 		if (attackerHealth > 0 && defenderHealth > 0){
 			$("#fightResult").html("<p>You attacked " + $("#defender .characterBox .characterName").text() +
 				" for " + attackerDamage + " damage." + "<br>" + $("#defender .characterBox .characterName").text() +
