@@ -52,6 +52,6 @@ p {
 	bottom: 4px;
 }
 
-#fightResult {
+#fightResult p {
 	font-size: 14px;
 }
