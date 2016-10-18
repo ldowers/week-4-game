@@ -14,6 +14,7 @@ var defenderHealth = 0;
 var attackerDamage = 0;
 var defenderDamage = 0;
 var attackerDamageIncrease = 0;
+var gameAudio = null;
 
 // Functions
 function setupCharacters () {
@@ -92,11 +93,21 @@ function resetGame () {
 	$("#restartButton").hide();
 }
 
+function playMusic() {
+	if (gameAudio !== null) {
+			gameAudio.pause();
+		}
+
+		gameAudio = new Audio("http://www.thesoundarchive.com/starwars/star-wars-theme-song.mp3");
+		gameAudio.play();
+}
+
 // Play Game
 
 $("#restartButton").hide();
 setupCharacters();
 chooseCharacter();
+playMusic();
 
 $("#attackButton").on('click', function(){
 	if (isAttacker && isDefender){
@@ -143,5 +154,6 @@ $('#restartButton').on('click', function() {
 	resetGame();
 	setupCharacters();
 	chooseCharacter();
+	playMusic();
 });
 });
