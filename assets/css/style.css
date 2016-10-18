@@ -1,16 +1,6 @@
 body {
-	background-image: url("../images/starwars.jpg");
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	background-color: black;
-}
-
-p {
-	clear: both;
-	margin-top: 10px;
-	font-size: 18px;
-	font-weight: bold;
-	color: white;
+	background: url("../images/starwars.jpg") no-repeat center center fixed;
+	background-size: cover;
 }
 
 @font-face {
@@ -52,6 +42,18 @@ p {
 	bottom: 4px;
 }
 
-#fightResult p {
+.gameSection {
+	clear: both;
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+}
+
+#howToPlayButton {
+	float: right;
+}
+
+#fightResult {
 	font-size: 14px;
 }

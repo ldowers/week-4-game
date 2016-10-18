@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	
 	<script src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
@@ -19,25 +20,53 @@
 				<header>
 					<h1 class="text-right starwars-logo-font">Star Wars RPG</h1>
 				</header>
+				
+				<button type="button" class="btn btn-info btn-md" id="howToPlayButton" data-toggle="modal" data-target="#myModal">How to Play</button>
+				
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">How to Play Star Wars RPG</h4>
+							</div>
+							<div class="modal-body">
+								<p>Choose your character by clicking on a fighter’s picture.</p>
+								<p>The object of the game is to defeat all of the remaining fighters.</p>
+								<p>Choose a defender by clicking on an enemy’s picture.</p>
+								<p>Click the attack button to damage the defender. The defender will instantly counter your attack. Your character and the defender will lose some of their health points after each attack and counter attack. Health points are shown at the bottom of the character’s picture. Your character will gain some attack power after each attack.</p>
+								<p>Keep clicking the attack button in an effort to defeat the defender.</p>
+								<p>If a defender’s health points are reduced to zero or below, the defender is defeated and you can choose a new defender by clicking on another enemy’s picture.</p>
+								<p>You win the game by defeating all of the enemy characters. You lose the game if your character’s health points are reduced to zero or below.</p>
+								<p>After the game is won or lost, you can start a new game by clicking the restart button.
+								</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div id="allCharacters"></div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<p>Your Character</p>
+				<p class="gameSection">Your Character</p>
 				<div id="attacker"></div>
-				<p>Enemies Available To Attack</p>
+				<p class="gameSection">Enemies Available To Attack</p>
 				<div id="allEnemies"></div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<p>Fight Section</p>
-				<button id="attackButton">Attack</button>
-				<p>Defender</p>
+				<p class="gameSection">Fight Section</p>
+				<button type="button" class="btn btn-default btn-md" id="attackButton">Attack</button>
+				<p class="gameSection">Defender</p>
 				<div id="defender"></div>
-				<div id="fightResult"></div>
-				<button id="restartButton">Restart</button>
+				<div class="gameSection" id="fightResult"></div>
+				<button type="button" class="btn btn-default btn-md" id="restartButton">Restart</button>
 			</div>
 		</div>
 	</div>
